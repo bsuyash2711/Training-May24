@@ -1,0 +1,55 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int *pt;
+    pt=(int*)malloc(10*sizeof(int));    // memory allocation
+    printf("\n *****malloc()******");
+    if(pt!=NULL){
+        //printf("memory is created");
+        printf("\nenter numbers from user:");
+        for(int i=0;i<10;i++){
+            scanf("%d",pt+i);
+        }
+        for(int i=0;i<10;i++){
+            printf(" \nnumbers are :%d",*(pt+i));
+        }        
+    }
+    else{
+        printf("not created");
+    }
+    printf("\n*****Realloc()******");
+    printf("\n elements after realloc:");
+    pt=realloc(pt,15*sizeof(int));  // reallocation 
+    if(pt!=NULL){
+        for(int i=0;i<15;i++){
+            scanf("%d",pt+i);
+        }
+        
+        printf("elements:");
+        for(int i=0;i<15;i++){
+            printf("\nelements are:%d",*(pt+i));
+        }
+    }
+    printf("\n*****calloc()******");
+    
+    int *ptr ;
+    ptr=(int*)calloc(5,sizeof(int));
+    printf("\n enter array elements:");
+    if(ptr!=NULL){
+        for(int i=0;i<5;i++){
+            scanf("%d",ptr+i);
+        }
+        for(int i=0;i<5;i++){
+            printf("array elements are:%d",*(ptr+i));
+        }
+        
+    }
+    
+    free(pt);
+    free(ptr);
+
+    return 0;
+}

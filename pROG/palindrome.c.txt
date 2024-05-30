@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[100];
+    printf("enter a string:");
+    scanf("%s",str);
+    int len=strlen(str);
+    int isPalindrome=1;   // assuming the given string is palindrome 
+    for(int i=0;i<len/2;i++){ // checking each character from beginning matches with its correspomnding character from end
+        if(str[i]!=str[len-i-1]){
+            isPalindrome=0;
+            break;
+        }
+    }
+if(isPalindrome){
+    printf("the string is Palindrome.\n");
+}
+else{
+    printf("the string is not palindrome \n");
+}
+    return 0;
+}
