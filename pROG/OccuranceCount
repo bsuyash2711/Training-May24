@@ -1,0 +1,18 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str[]="aaabcad";
+    int arr[256]={0};
+    for(int i=0;str[i]!='\0';i++){
+        arr[str[i]]++;
+    }
+    for(int i=0;i<256;i++){
+        if(arr[i]>0){
+            printf("%c: %d\n",i,arr[i]);
+        }
+    }
+
+    return 0;
+}
