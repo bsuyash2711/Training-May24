@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int arr1[]={1,2,3,45,5,45,3,2,1,6,7};
+    int n=11;
+    int arr[256]={0};
+    for(int i=0;i<n;i++){
+        arr[arr1[i]]++;
+    }
+    for(int i=0;i<256;i++){
+        if(arr[i]>0){
+            printf("%d: %d\n",i,arr[i]);
+        }
+    }
+
+    return 0;
+}
